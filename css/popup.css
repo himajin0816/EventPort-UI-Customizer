@@ -1,0 +1,185 @@
+/* EventPort UI Customizer - Popup Styles */
+
+body {
+  width: 320px;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #1f2937;
+  background-color: #f9fafb;
+}
+
+.ep-popup-header {
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ep-popup-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ep-popup-version {
+  font-size: 11px;
+  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.ep-popup-body {
+  padding: 16px;
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+}
+
+.ep-setting-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.ep-card-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.ep-setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px;
+  color: #374151;
+}
+
+.ep-setting-row + .ep-setting-row {
+  border-top: 1px solid #f3f4f6;
+  margin-top: 4px;
+  padding-top: 8px;
+}
+
+.ep-setting-desc {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.ep-select {
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 12px;
+  background-color: #fff;
+  color: #374151;
+  outline: none;
+}
+
+.ep-select:focus {
+  border-color: #ea580c;
+}
+
+/* ポップアップ用トグルスイッチ */
+.ep-switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.ep-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ep-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d1d5db;
+  transition: 0.2s;
+  border-radius: 18px;
+}
+
+.ep-slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+.ep-switch input:checked + .ep-slider {
+  background-color: #ea580c;
+}
+
+.ep-switch input:checked + .ep-slider:before {
+  transform: translateX(16px);
+}
+
+.ep-btn-sync {
+  width: 100%;
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+
+.ep-btn-sync:hover {
+  background: #e5e7eb;
+}
+
+.ep-btn-sync:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ep-sync-status {
+  font-size: 11px;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.ep-footer {
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 11px;
+  color: #9ca3af;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>EventPort UI Customizer 設定</title>
+  <link rel="stylesheet" href="../css/popup.css">
+</head>
+
+<body>
+  <div class="ep-popup-header">
+    <h1 class="ep-popup-title">
+      <span>EventPort Customizer</span>
+    </h1>
+    <span class="ep-popup-version" id="ep-popup-version">v1.0.0</span>
+  </div>
+
+  <div class="ep-popup-body">
+    <!-- 表示設定カード -->
+    <div class="ep-setting-card">
+      <div class="ep-card-title">表示・フィルター設定</div>
+
+      <div class="ep-setting-row">
+        <div>
+          <div>過去イベントの非表示</div>
+          <div class="ep-setting-desc">参加イベント一覧で昨日以前を隠す</div>
+        </div>
+        <label class="ep-switch">
+          <input type="checkbox" id="setting-hide-past">
+          <span class="ep-slider"></span>
+        </label>
+      </div>
+
+      <div class="ep-setting-row">
+        <div>
+          <div>同日他イベントのグレーアウト</div>
+          <div class="ep-setting-desc">申込済みと同日の他イベントを薄く表示</div>
+        </div>
+        <label class="ep-switch">
+          <input type="checkbox" id="setting-dim-conflicts">
+          <span class="ep-slider"></span>
+        </label>
+      </div>>
+
+      <div class="ep-setting-row">
+        <div>
+          <div>初期並び順（開催日）</div>
+          <div class="ep-setting-desc">表のタイトル行クリックでいつでも切替可</div>
+        </div>
+        <select id="setting-default-sort" class="ep-select">
+          <option value="none">初期順（標準）</option>
+          <option value="asc">開催日 昇順（直近順）</option>
+          <option value="desc">開催日 降順（先の日程順）</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ボイベまとめ連携カード -->
+    <div class="ep-setting-card">
+      <div class="ep-card-title">ボイベまとめ連携（締切警告）</div>
+
+      <div class="ep-setting-row">
+        <div>
+          <div>締切警告バッジ</div>
+          <div class="ep-setting-desc">募集締切が近いイベントに警告を表示</div>
+        </div>
+        <label class="ep-switch">
+          <input type="checkbox" id="setting-deadline-warn">
+          <span class="ep-slider"></span>
+        </label>
+      </div>
+
+      <div class="ep-setting-row">
+        <div>
+          <div>警告を表示する期間</div>
+          <div class="ep-setting-desc">締切何日前から表示するか</div>
+        </div>
+        <select id="setting-warning-days" class="ep-select">
+          <option value="3">3日前以内</option>
+          <option value="5">5日前以内</option>
+          <option value="7">7日前以内（推奨）</option>
+          <option value="14">14日前以内</option>
+        </select>
+      </div>
+
+      <div style="margin-top: 10px;">
+        <button type="button" id="btn-sync-voib" class="ep-btn-sync">
+          🔄 最新締切データを手動更新
+        </button>
+        <div id="sync-status" class="ep-sync-status">キャッシュ有効期間: 24時間</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ep-footer">
+    EventPort快適化ツール
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/dateUtils.js"></script>
+  <script src="../js/voibSummaryApi.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>

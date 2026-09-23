@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "EventPort UI Customizer",
+  "version": "1.0.0",
+  "description": "EventPortのイベント一覧・参加イベント一覧の並び替え、過去イベント非表示、申込状況の強調表示、ボイベまとめ締切警告を行う拡張機能",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "EventPort UI Customizer 設定"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://event-port.com/*",
+    "https://vo.nrsy.jp/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://event-port.com/dashboard*",
+        "https://event-port.com/circle-participation*",
+        "https://event-port.com/seller-participation*",
+        "https://event-port.com/general-participation*"
+      ],
+      "css": [
+        "css/content.css"
+      ],
+      "js": [
+        "js/config.js",
+        "js/storage.js",
+        "js/dateUtils.js",
+        "js/voibSummaryApi.js",
+        "js/tableController.js",
+        "js/ui.js",
+        "js/pages/dashboardPage.js",
+        "js/pages/circlePartPage.js",
+        "js/pages/memberPartPage.js",
+        "js/pages/generalPartPage.js",
+        "js/content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
