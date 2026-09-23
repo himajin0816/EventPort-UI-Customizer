@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー - EventPort UI Customizer</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root {
+      --primary: #ea580c;
+      --text: #1e293b;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background-color: var(--bg);
+      margin: 0;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .header-logo img {
+      width: 36px;
+      height: 36px;
+    }
+    h1 {
+      font-size: 24px;
+      color: var(--primary);
+      margin: 0;
+    }
+    .divider {
+      height: 2px;
+      background: var(--primary);
+      margin: 16px 0 24px 0;
+      border-radius: 2px;
+    }
+    h2 {
+      font-size: 19px;
+      margin-top: 32px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      color: #0f172a;
+    }
+    h3 {
+      font-size: 16px;
+      margin-top: 20px;
+      color: #334155;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .meta {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #0f172a;
+    }
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-logo">
+      <img src="favicon.png" alt="EventPort UI Customizer Icon">
+      <h1>プライバシーポリシー (Privacy Policy)</h1>
+    </div>
+    <div class="divider"></div>
+
+    <div class="meta">
+      <strong>拡張機能名:</strong> EventPort UI Customizer<br>
+      <strong>最終更新日:</strong> 2026年9月24日
+    </div>
+
+    <p>本拡張機能（EventPort UI Customizer、以下「当拡張機能」）は、ユーザーのプライバシーを尊重し、個人情報の保護に最大限の配慮を行っております。本ポリシーでは、当拡張機能における利用者の情報の取扱いについて説明します。</p>
+
+    <h2>1. 収集する情報とその利用目的</h2>
+    <p>当拡張機能は、<strong>ユーザーの個人情報（氏名、メールアドレス、パスワード、アカウント情報、決済情報、サークル参加申込内容等）を収集・取得・外部送信することは一切ありません。</strong></p>
+
+    <h3>1-1. 拡張機能の設定データ（ローカル保存）</h3>
+    <ul>
+      <li><strong>対象:</strong> 過去イベント非表示のON/OFF、初期並び順設定、締切警告の有効/無効、同日他イベントのグレーアウト設定</li>
+      <li><strong>保存先:</strong> お使いのブラウザ内部のローカルストレージ（<code>chrome.storage.local</code>）</li>
+      <li><strong>利用目的:</strong> ユーザーが設定した表示設定を保持し、次回ページ表示時に適用するためのみに使用されます。このデータが外部サーバーへ送信されることはありません。</li>
+    </ul>
+
+    <h3>1-2. 外部通信について（ボイベまとめ API）</h3>
+    <ul>
+      <li>当拡張機能は、イベントの募集締切日や申込変更締切日を警告表示する機能を提供するため、「ボイベまとめ（https://vo.nrsy.jp/）」の公開イベント情報フィードと通信を行います。</li>
+      <li>この通信は公開カレンダーデータを受信するためだけの読み取り専用通信であり、<strong>ユーザーを特定できる識別子や閲覧履歴、入力情報などを送信することは一切ありません。</strong></li>
+      <li>また、外部サーバーへの通信負荷を最小限に抑えるため、取得したデータはブラウザ内に24時間一時キャッシュされます。</li>
+    </ul>
+
+    <h2>2. 権限（Permissions）の利用目的</h2>
+    <ul>
+      <li><code>storage</code>: ユーザーの表示設定をブラウザローカルに保存・読み込みするため。</li>
+      <li><code>https://event-port.com/*</code>: EventPort の対象4ページ（<code>/dashboard</code>, <code>/circle-participation</code>, <code>/seller-participation</code>, <code>/general-participation</code>）において、一覧表のソート、過去イベントの非表示、申込状況の強調表示を行うため。</li>
+      <li><code>https://vo.nrsy.jp/*</code>: ボイベまとめの公開APIから締切日情報を取得し、締切警告を表示するため。</li>
+    </ul>
+
+    <h2>3. 第三者へのデータ提供</h2>
+    <p>当拡張機能は、ユーザーのいかなるデータも収集・保管していないため、第三者への提供、販売、共有を行うことは一切ありません。</p>
+
+    <h2>4. プライバシーポリシーの変更</h2>
+    <p>当拡張機能の機能追加や規約改定に伴い、本プライバシーポリシーを改定することがあります。重要な変更がある場合は、拡張機能の更新情報等を通じてお知らせします。</p>
+
+    <h2>5. お問い合わせ</h2>
+    <p>本プライバシーポリシーまたは当拡張機能に関するお問い合わせは、配布ページ（Chrome ウェブストアのサポートタブまたは GitHub リポジトリの Issue）よりお願いいたします。</p>
+
+    <div class="footer">
+      &copy; 2026 EventPort UI Customizer
+    </div>
+  </div>
+</body>
+</html>
