@@ -1,3 +1,7 @@
 サイト情報/
 test/
+release_workspace/
+*.zip
+.DS_Store
+Thumbs.db
 
